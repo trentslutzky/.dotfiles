@@ -1,0 +1,3 @@
+configuration {
+	theme: "/home/trent/.config/rofi/sidebar.rasi";
+}
