@@ -1,0 +1,39 @@
+#! /bin/sh
+
+. "/home/trent/.cache/wal/colors.sh"
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc config border_width         2
+bspc config window_gap           10
+
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+setxkbmap -option caps:escape
+picom &
+flameshot &
+redshift &
+autorandr -c & 
+polybar main -r &
+xsetroot -cursor_name left_ptr &
+xrdb ~/.Xresources
+modprobe v4l2loopback &
+dunst &
+xmousepasteblock &
+
+xrandr --output HDMI-0 --mode 3840x2160 --rate 60
+
+bspc monitor HDMI-0   -d 1 2 3 4 5 6 7 8
+bspc config focused_border_color $color5
+bspc config normal_border_color $background
+
+xautolock -time 5 -locker "~/Scripts/locker.sh" -corners ---- &
+
+/opt/urserver/urserver --daemon &
+
+wal --theme gruvbox; pywalfox update; neofetch
+polybar main -r &
+bluetoothctl power on
+feh --bg-fill Wallpapers/apple_jtree.jpg
