@@ -28,4 +28,5 @@ xautolock -time 5 -locker "~/Scripts/locker.sh" -corners ---- &
 
 bluetoothctl power on
 polybar example -r
-feh --bg-scale Wallpapers/road-plains.jpg
+feh --bg-scale Wallpapers/apple_jtree.jpg
+bspc config top_padding 40
