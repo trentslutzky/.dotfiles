@@ -1,7 +1,5 @@
 #! /bin/sh
 
-. "/home/trent/.cache/wal/colors.sh"
-
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc config border_width         2
@@ -15,11 +13,8 @@ setxkbmap -option caps:escape
 picom &
 flameshot &
 redshift &
-autorandr -c & 
-polybar main -r &
 xsetroot -cursor_name left_ptr &
 xrdb ~/.Xresources
-modprobe v4l2loopback &
 dunst &
 xmousepasteblock &
 
@@ -31,9 +26,6 @@ bspc config normal_border_color $background
 
 xautolock -time 5 -locker "~/Scripts/locker.sh" -corners ---- &
 
-/opt/urserver/urserver --daemon &
-
-wal --theme gruvbox; pywalfox update; neofetch
-polybar main -r &
 bluetoothctl power on
-feh --bg-fill Wallpapers/apple_jtree.jpg
+polybar example -r
+feh --bg-scale Wallpapers/road-plains.jpg
