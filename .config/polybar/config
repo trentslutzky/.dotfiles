@@ -156,7 +156,7 @@ type = custom/script
 exec = $HOME/.config/polybar/player.sh
 interval = 1
 click-left = playerctl play-pause
-click-middle = 
+click-middle = xdo activate -N Spotify
 
 [settings]
 screenchange-reload = true
