@@ -17,6 +17,7 @@ xsetroot -cursor_name left_ptr &
 xrdb ~/.Xresources
 dunst &
 xmousepasteblock &
+ntfd &
 
 xrandr --output HDMI-0 --mode 3840x2160 --rate 60
 
@@ -26,7 +27,9 @@ bspc config normal_border_color $background
 
 xautolock -time 5 -locker "~/Scripts/locker.sh" -corners ---- &
 
-bluetoothctl power on
-polybar example -r
-feh --bg-scale Wallpapers/apple_jtree.jpg
+bluetoothctl power on &
+polybar main -r &
+feh --bg-scale $HOME/Wallpapers/leaves.jpg &
 bspc config top_padding 40
+
+notify-send -u low "bspwm config successful"

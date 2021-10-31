@@ -17,22 +17,15 @@ Plug 'calviken/vim-gdscript3'
 
 call plug#end()
 
-" colorscheme
-let g:tokyonight_style = "night"
-let g:tokyonight_italic_functions = 0
-let g:tokyonight_italic_comments = 0
-let g:tokyonight_italic_keywords = 0
-
 " Load the colorscheme
 colorscheme wal
 
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set ignorecase
 
 set number relativenumber
-hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE
+hi CursorLine cterm=bold ctermbg=NONE ctermfg=NONE
 set cursorline
 
 " indent lines config
@@ -43,13 +36,14 @@ lua <<EOF
 require'lualine'.setup {
   options = {
     icons_enabled = true,
-    theme = 'gruvbox',
+    theme = 'onedark',
     component_separators = {'|', '|'},
     section_separators = {'', ''},
     disabled_filetypes = {}
   },
   sections = {
     lualine_a = {'mode'},
+
     lualine_b = {'branch'},
     lualine_c = {'filetype'},
     lualine_x = {'encoding', 'fileformat'},
@@ -70,7 +64,7 @@ require'lualine'.setup {
 	  lualine_c = {},
 	  lualine_x = {},
 	  lualine_y = {},
-	  lualine_z = {}
+	  lualine_z = {'location'}
 	  },
   extensions = {}
 }
