@@ -10,7 +10,8 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 setxkbmap -option caps:escape
-picom &
+picom --xrender-sync-fence &
+sleep 0.5
 flameshot &
 redshift &
 xsetroot -cursor_name left_ptr &
@@ -18,6 +19,7 @@ xrdb ~/.Xresources
 dunst &
 xmousepasteblock &
 ntfd &
+udiskie &
 
 xrandr --output HDMI-0 --mode 3840x2160 --rate 60
 
@@ -27,9 +29,21 @@ bspc config normal_border_color $background
 
 xautolock -time 5 -locker "~/Scripts/locker.sh" -corners ---- &
 
+
 bluetoothctl power on &
 polybar main -r &
 feh --bg-scale $HOME/Wallpapers/leaves.jpg &
+sleep 2
 bspc config top_padding 40
+
+bspc desktop --focus ^1
+slack &
+discord &
+sleep 5
+bspc desktop --focus ^8
+spotify &
+sleep 1
+bspc desktop --focus ^1
+
 
 notify-send -u low "bspwm config successful"

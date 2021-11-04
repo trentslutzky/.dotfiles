@@ -1,4 +1,4 @@
-# Defined in /tmp/fish.vNU7nU/l.fish @ line 2
 function l
+    clear
     exa -1 -F --icons $argv
 end

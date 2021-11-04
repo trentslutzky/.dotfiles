@@ -32,7 +32,7 @@ super + Return
 
 # program launcher
 super + p
-	rofi -show run
+	rofi -show run -font "JetBrainsMono Nerd Font 20"
 
 # make sxhkd reload its configuration files:
 super + Escape
