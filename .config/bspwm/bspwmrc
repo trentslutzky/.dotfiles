@@ -3,15 +3,18 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc config border_width         2
-bspc config window_gap           10
+bspc config window_gap           20
 
 bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+xrandr --output HDMI-0 --mode 3840x2160 --rate 60 --primary
+xrandr --output DVI-D-0 --mode 1920x1080 --left-of HDMI-0 --scale 1
+sleep 5
+
 setxkbmap -option caps:escape
 picom --xrender-sync-fence &
-sleep 0.5
 flameshot &
 redshift &
 xsetroot -cursor_name left_ptr &
@@ -20,30 +23,16 @@ dunst &
 xmousepasteblock &
 ntfd &
 udiskie &
-
-xrandr --output HDMI-0 --mode 3840x2160 --rate 60
+bluetoothctl power on &
+wmname compiz
 
 bspc monitor HDMI-0   -d 1 2 3 4 5 6 7 8
+bspc monitor DVI-D-0  -d 9 10
 bspc config focused_border_color $color5
 bspc config normal_border_color $background
+bspc config top_padding 40
 
 xautolock -time 5 -locker "~/Scripts/locker.sh" -corners ---- &
 
-
-bluetoothctl power on &
 polybar main -r &
 feh --bg-scale $HOME/Wallpapers/leaves.jpg &
-sleep 2
-bspc config top_padding 40
-
-bspc desktop --focus ^1
-slack &
-discord &
-sleep 5
-bspc desktop --focus ^8
-spotify &
-sleep 1
-bspc desktop --focus ^1
-
-
-notify-send -u low "bspwm config successful"

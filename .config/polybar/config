@@ -27,7 +27,7 @@ alert = #bd2c40
 accent = #227722
 
 [bar/main]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:HDMI-0}
 width = 3840
 height = 40
 ;radius = 6.0
@@ -56,7 +56,7 @@ modules-right = pulseaudio weather date
 wm-restack = bspwm
 ;wm-restack = i3
 
-;override-redirect = true
+override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
