@@ -18,6 +18,10 @@ Print
 
 super + c
 	rofi -modi test:/home/trent/Utilities/config_menu.py -show test -show-icons
+
+super + ctrl + {1,2,3,4}
+    obs-cli scene switch {Screen-Cam,Screen,Camera,AFK}
+
 #
 # wm independent hotkeys
 #
@@ -112,10 +116,6 @@ super + {_,shift + }{1-9,0}
 # preselect the direction
 super + shift + {n,e,u,o}
 	bspc node -p {west,south,north,east}
-
-# preselect the ratio
-super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
 super + space

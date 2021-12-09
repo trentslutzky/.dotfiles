@@ -51,7 +51,7 @@ font-2 = "JetbrainsMono Nerd Font:size=20;5"
 
 modules-left = bspwm slack discord spotify
 modules-center = player
-modules-right = pulseaudio weather date
+modules-right = pulseaudio date
 
 wm-restack = bspwm
 ;wm-restack = i3

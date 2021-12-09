@@ -7,13 +7,13 @@ Plug 'dylanaraps/wal.vim' " colorscheming for wal colors
 Plug 'yuezk/vim-js' " js stuff
 Plug 'maxmellon/vim-jsx-pretty' " jsx(react) stuff
 Plug 'tpope/vim-repeat' " dependancy for ???
-Plug 'folke/tokyonight.nvim' " tokyonight colorscheme
 Plug 'Yggdroot/indentLine' " indent lines
 Plug 'tpope/vim-commentary' " commenting
 Plug 'tpope/vim-surround' " change things surrounting things
 Plug 'raimondi/delimitmate' " auto close quotes, etc
-Plug 'morhetz/gruvbox'
 Plug 'calviken/vim-gdscript3'
+Plug 'rust-lang/rust.vim' " rust shit
+Plug 'JuliaEditorSupport/julia-vim' " julia
 
 call plug#end()
 
