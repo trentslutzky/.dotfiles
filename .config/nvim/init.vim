@@ -14,14 +14,15 @@ Plug 'raimondi/delimitmate' " auto close quotes, etc
 Plug 'calviken/vim-gdscript3'
 Plug 'rust-lang/rust.vim' " rust shit
 Plug 'JuliaEditorSupport/julia-vim' " julia
+Plug 'evanleck/vim-svelte', {'branch': 'main'} " svelte
 
 call plug#end()
 
 " Load the colorscheme
 colorscheme wal
 
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 set number relativenumber
@@ -36,7 +37,6 @@ lua <<EOF
 require'lualine'.setup {
   options = {
     icons_enabled = true,
-    theme = 'onedark',
     component_separators = {'|', '|'},
     section_separators = {'', ''},
     disabled_filetypes = {}
