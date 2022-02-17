@@ -28,17 +28,19 @@ accent = #227722
 
 [bar/main]
 monitor = ${env:MONITOR:HDMI-0}
-width = 3839
+width = 3840
+bottom = false
 height = 40
-;radius = 6.0
+;radius = 10
 fixed-center = true
-offset-x = 1
+;offset-y = 20
+;offset-x = 20
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
 border-size = 0
-border-color = ${xrdb:color7}
+border-color = ${xrdb:color0}
 
 padding-left = 0
 padding-right = 1
@@ -50,7 +52,7 @@ font-0 = "JetbrainsMono Nerd Font:size=15;3"
 font-1 = WeatherIcons:size=13;3
 font-2 = "JetbrainsMono Nerd Font:size=20;5"
 
-modules-left = bspwm slack discord spotify
+modules-left = bspwm
 modules-center = player
 modules-right = pulseaudio date
 

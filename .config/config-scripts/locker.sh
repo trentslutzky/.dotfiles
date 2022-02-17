@@ -8,7 +8,7 @@ i3lock \
     -e \
     -t \
     --nofork \
-    -i '/home/tls/Scripts/lockbg.jpg' \
+    -i '/$HOME/.config/config-scripts/lockbg.jpg' \
     --color='#000000ff'\
     --clock \
     --verif-text='...' \
