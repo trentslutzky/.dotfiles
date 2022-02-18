@@ -1,6 +1,6 @@
-# .dotfiles
+# esper
 
-My simple arch linux dotfiles. this is where I store my linux config files and other useful things for customizing my linux experience.
+Configuration files for my linux desktop computer (esper). .config files and other useful things for customizing my linux experience.
 
 Always evolving.
 
