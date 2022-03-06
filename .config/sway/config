@@ -1,0 +1,182 @@
+# pywal colors
+include "$HOME/.cache/wal/colors-sway"
+
+### launch before sway
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+# audio
+exec pipewire-pulse
+exec qpwgraph # patchbar for pipewire
+
+# notifications
+exec mako
+
+# waybar using custom launcher script
+# exec waybar
+exec "/bin/bash -c '$HOME/.config/waybar/launch.bash'"
+
+# stretchly - break/exercise reminders
+#exec stretchly
+
+# bspwm-like autotiling
+# https://github.com/nwg-piotr/autotiling
+exec autotiling
+
+### Monitors
+
+output HDMI-A-1 mode 1920x1080 position 0,0
+output DP-1 mode 3840x2160 position 1920,0 scale 1.25
+
+# wallpapers (* sets the same on both)
+output DP-1 bg /home/tls/Wallpapers/zig.jpg fill
+
+### Variables
+
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+
+# custom direction keys
+set $left n
+set $down e
+set $up u
+set $right o
+
+# Your preferred terminal emulator
+set $term kitty
+
+# Your preferred application launcher
+set $menu rofi -show run
+
+### visual stuff
+
+# remove the title bar
+default_border pixel 2
+
+# GAPS
+gaps inner 15
+
+# borders
+client.focused #000000 $color4 #000000 $color4
+
+client.focused_inactive #000000 #222222 #000000 #222222
+
+focus_follows_mouse no
+
+smart_borders on
+smart_gaps on
+
+### Key bindings
+  # media buttons
+
+  # play/pause back fwd
+  bindsym XF86AudioPlay exec playerctl play-pause
+  bindsym XF86AudioNext exec playerctl next
+  bindsym XF86AudioPrev exec playerctl previous
+
+  # volume
+  bindsym XF86AudioRaiseVolume exec pamixer -i 5 && pamixer --get-volume > /tmp/wobpipe
+  bindsym XF86AudioLowerVolume exec pamixer -d 5 && pamixer --get-volume > /tmp/wobpipe
+
+  # Start a terminal
+  bindsym $mod+Return exec $term
+
+  # Start firefox
+  bindsym $mod+b exec MOZ_ENABLE_WAYLAND=1 firefox --new-window
+
+  # Kill focused window
+  bindsym $mod+w kill
+
+  # Start your launcher
+  bindsym $mod+p exec $menu
+
+  floating_modifier $mod normal
+
+  # screenshot
+  # bindsym Print exec grim -g "$(slurp -d -c "#51ac21ff" -b "#000000aa")" - | wl-copy && notify-send "screenshot captured"
+  bindsym Print exec grimshot --notify copy area
+
+  # Reload the configuration file
+  bindsym $mod+Shift+c reload
+
+  # Exit sway (logs you out of your Wayland session)
+  bindsym $mod+Shift+q exec swaynag -t warning -m 'Exit sway?' -B 'Yes' 'swaymsg exit'
+#
+# Moving around:
+#
+  # Move your focus around
+  bindsym $mod+$left focus left
+  bindsym $mod+$down focus down
+  bindsym $mod+$up focus up
+  bindsym $mod+$right focus right
+
+  # Or use $mod+[up|down|left|right]
+  bindsym $mod+Left focus left
+  bindsym $mod+Down focus down
+  bindsym $mod+Up focus up
+  bindsym $mod+Right focus right
+
+### Workspaces:
+  # Bind to monitors
+  workspace 11 output HDMI-A-1
+  workspace 12 output HDMI-A-1
+  workspace 13 output HDMI-A-1
+
+  workspace 1 output DP-1
+  workspace 2 output DP-1
+  workspace 3 output DP-1
+  workspace 4 output DP-1
+  workspace 5 output DP-1
+  workspace 6 output DP-1
+  workspace 7 output DP-1
+  workspace 8 output DP-1
+
+  # Switch to workspace
+  bindsym $mod+1 workspace number 1
+  bindsym $mod+2 workspace number 2
+  bindsym $mod+3 workspace number 3
+  bindsym $mod+4 workspace number 4
+  bindsym $mod+5 workspace number 5
+  bindsym $mod+6 workspace number 6
+  bindsym $mod+7 workspace number 7
+  bindsym $mod+8 workspace number 8
+  # Move focused container to workspace
+  
+  bindsym $mod+Shift+1 move container to workspace number 1
+  bindsym $mod+Shift+2 move container to workspace number 2
+  bindsym $mod+Shift+3 move container to workspace number 3
+  bindsym $mod+Shift+4 move container to workspace number 4
+  bindsym $mod+Shift+5 move container to workspace number 5
+  bindsym $mod+Shift+6 move container to workspace number 6
+  bindsym $mod+Shift+7 move container to workspace number 7
+  bindsym $mod+Shift+8 move container to workspace number 8
+  
+  # moving workspaces
+  # bindsym $mod+bracketright workspace next_on_output
+  # bindsym $mod+bracketleft workspace prev_on_output
+  bindsym $mod+bracketright exec "~/.config/sway/traverse_workspace.sh next"
+  bindsym $mod+bracketleft exec "~/.config/sway/traverse_workspace.sh prev"
+
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+Shift+o splith
+    bindsym $mod+Shift+e splitv
+
+    # Switch the current container between different layout styles
+    # bindsym $mod+s layout stacking
+    # bindsym $mod+w layout tabbed
+    # bindsym $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+s floating toggle
+
+    # Toggle sticky
+    bindsym $mod+t sticky toggle
+
+include /etc/sway/config.d/*

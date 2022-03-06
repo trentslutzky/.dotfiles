@@ -1,0 +1,72 @@
+{
+  "layer": "top",
+  "output": ["DP-1"],
+  "modules-left": [
+    "sway/workspaces",
+    "tray",
+  ],
+  "modules-center": [
+    "custom/player"
+  ],
+  "modules-right": [
+    "custom/weather",
+    "temperature",
+    "pulseaudio",
+    "clock#date",
+    "clock#time"
+  ],
+  "sway/workspaces":{
+    "persistent_workspaces": {
+      "1":[],
+      "2":[],
+      "3":[],
+      "4":[],
+      "5":[],
+      "6":[],
+      "7":[],
+      "8":[]
+    }
+  },
+  "tray":{
+    "icon-size":20,
+    "spacing":10,
+  },
+  "sway/window": {
+    "max-length": 50
+  },
+  "clock#time": {
+    "tooltip": false,
+    "interval": 1,
+    "format": " {:%I:%M %p}",
+  },
+  "clock#date": {
+    "tooltip": false,
+    "interval": 10,
+    "format": " {:%a %b %d}", // Icon: calendar-alt
+    "tooltip-format": ""
+  },
+  "pulseaudio":{
+    "tooltip": false,
+    "format":"{icon} {volume}%",
+    "format-icons":{
+      "default":["",""]
+    }
+  },
+  "temperature":{
+    "tooltip": false,
+    "format":" {temperatureC}°C"
+  },
+  "custom/player": {
+    "format": "  {}",
+    "tooltip": false,
+    "exec": "$HOME/.config/waybar/modules/player.bash",
+    "on-click": "playerctl play-pause",
+  },
+  "custom/weather": {
+    "format": "{}",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "$HOME/.config/waybar/modules/weather.py",
+    "return-type": "json"
+  },
+}

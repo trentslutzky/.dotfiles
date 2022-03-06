@@ -1,0 +1,7 @@
+audio.play_bitrate_non_metered_migrated=true
+gaia.attached_device_id="064bb2d5027fc558692888bed39b59b555160d5b"
+ui.hide_hpto=true
+ui.track_notifications_enabled=false
+ui.show_friend_feed=false
+app.player.volume=65536
+app.browser.zoom-level=-50

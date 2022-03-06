@@ -1,0 +1,9 @@
+font=Jetbrains Mono Nerd Font
+width=400
+padding=10
+background-color=#000000da
+border-color=#61afef
+icon-location=right
+default-timeout=10000
+max-visible=16
+output=DP-1

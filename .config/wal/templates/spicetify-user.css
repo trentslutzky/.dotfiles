@@ -1,0 +1,113 @@
+:root{{
+  --spice-shadow: #000000;
+  --spice-misc: #00010a;
+  --spice-selected-row: #f1f1f1;
+  --spice-button: {color4};
+  --spice-button-disabled: {color4};
+  --spice-tab-active: {color4};
+  --spice-card: #161616;
+  --spice-notification: #00010a;
+  --spice-subtext: {foreground};
+  --spice-text: #f1f1f1;
+  --spice-main: {background};
+  --spice-sidebar: {background};
+  --spice-notification-error: {color4};
+  --spice-player: {background};
+  --spice-button-active: #f1f1f1;
+  --spice-rgb-shadow: 0,0,0;
+  --spice-rgb-misc: 0,1,10;
+  --spice-rgb-selected-row: 241,241,241;
+  --spice-rgb-button: 255,65,81;
+  --spice-rgb-button-disabled: 67,76,94;
+  --spice-rgb-tab-active: 255,65,81;
+  --spice-rgb-card: 0,1,10;
+  --spice-rgb-notification: 0,1,10;
+  --spice-rgb-text: 255,255,255;
+  --spice-rgb-subtext: 241,241,241;
+  --spice-rgb-main: 1,1,1;
+  --spice-rgb-sidebar: 1,1,1;
+  --spice-rgb-notification-error: 255,65,81;
+  --spice-rgb-player: 1,1,1;
+  --spice-rgb-button-active: 241,241,241;
+}}
+
+.main-home-homeHeader {{
+  background-color:transparent !important;
+  background-image:none;
+}}
+
+.main-actionBarBackground-background {{
+  background-color:transparent !important;
+  background-image:none;
+}}
+
+.main-entityHeader-backgroundColor {{
+    background: var(--spice-main) !important;
+}}
+
+.main-entityHeader-container.main-entityHeader-withBackgroundImage {{
+  background:linear-gradient(0deg, var(--spice-main) 0%, rgba(0,0,0,0) 100%);
+}}
+
+.main-entityHeader-overlay {{
+  display:none;
+}}
+
+.spotify__container--is-desktop:not(.fullscreen) .main-navBar-entryPoints {{
+  padding-top:unset;
+}}
+
+.main-rootlist-rootlistItem:hover {{
+  background:var(--spice-card);
+}}
+
+.main-rootlist-playButton {{
+  color: var(--spice-button) !important;
+}}
+
+.main-trackList-playingIcon {{
+  position: absolute;
+  filter: grayscale(1);
+  transform: scale(1.5);
+}}
+
+.os-scrollbar {{
+  display:none;
+}}
+
+.progress-bar {{
+  --bg-color:var(--spice-card);
+  --fg-color:var(--spice-button);
+}}
+
+.main-connectBar-connectBar.Nn4leRs7aeJugDtkoR5G {{
+  background-color:var(--spice-button);
+}}
+
+.main-connectBar-connectBar:after {{
+  border:none;
+}}
+
+.main-cardImage-imageWrapper {{
+  background-color:transparent;
+}}
+
+.main-topBar-background {{
+  background-color: var(--spice-button) !important;
+}}
+
+.main-nowPlayingBar-container {{
+  border-top: 3px solid var(--spice-card);
+}}
+
+div.GlueDropTarget.personal-library > * {{
+  display:none;
+}}
+
+section[aria-label*="Shows you might like"] {{
+  display:none;
+}}
+
+.main-yourEpisodes-episodeCard {{
+  display:none;
+}}
