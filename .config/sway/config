@@ -22,12 +22,16 @@ exec "/bin/bash -c '$HOME/.config/waybar/launch.bash'"
 # https://github.com/nwg-piotr/autotiling
 exec autotiling
 
+# gammastep for color temp changing
+exec "gammastep -l 34.108:-83.175 -t 6500:3200"
+
 ### Monitors
 
 output HDMI-A-1 mode 1920x1080 position 0,0
 output DP-1 mode 3840x2160 position 1920,0 scale 1.25
 
 # wallpapers (* sets the same on both)
+output * bg "#000000" solid_color
 output DP-1 bg /home/tls/Wallpapers/zig.jpg fill
 
 ### Variables

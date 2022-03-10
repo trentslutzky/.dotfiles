@@ -60,6 +60,7 @@
     "tooltip": false,
     "exec": "$HOME/.config/waybar/modules/player.bash",
     "on-click": "playerctl play-pause",
+    "on-click-middle": "$HOME/.config/sway/scripts/sway-focus.bash Spotify",
   },
   "custom/weather": {
     "format": "{}",
