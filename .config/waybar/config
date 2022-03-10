@@ -3,7 +3,6 @@
   "output": ["DP-1"],
   "modules-left": [
     "sway/workspaces",
-    "tray",
   ],
   "modules-center": [
     "custom/player"

@@ -6,7 +6,7 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 
 # audio
 exec pipewire-pulse
-exec qpwgraph # patchbar for pipewire
+# exec qpwgraph # patchbar for pipewire
 
 # notifications
 exec mako
