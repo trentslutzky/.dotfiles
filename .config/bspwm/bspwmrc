@@ -1,10 +1,13 @@
 #! /bin/sh
-xrandr --output HDMI-0 --mode 3840x2160 --rate 60 --primary
-xrandr --output DVI-D-0 --mode 1920x1080 --left-of HDMI-0 --scale 1
+xrandr --output DisplayPort-0 --mode 3840x2160 --rate 60 --primary --scale 1.25
+xrandr --output HDMI-A-0 --mode 1920x1080 --left-of HDMI-0 --scale 1
 sleep 5
 
-PRIMARY_MONITOR=$(/$HOME/.config/config-scripts/primary_monitor.bash)
-SECONDARY_MONITOR=$(/$HOME/.config/config-scripts/secondary_monitor.bash)
+#PRIMARY_MONITOR=$(/$HOME/.config/config-scripts/primary_monitor.bash)
+#SECONDARY_MONITOR=$(/$HOME/.config/config-scripts/secondary_monitor.bash)
+
+PRIMARY_MONITOR="DisplayPort-0"
+SECONDARY_MONITOR="HDMI-A-0"
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
@@ -27,7 +30,6 @@ bspc config gapless_monocle      true
 
 bspc rule -a zoom state=floating
 
-setxkbmap -option caps:escape
 picom --xrender-sync-fence &
 flameshot &
 redshift &
@@ -45,5 +47,5 @@ wmname compiz
 xautolock -time 5 -locker "~/.config/config-scripts/locker.sh" -corners ---- &
 
 polybar main -r &
-feh --bg-scale $HOME/Wallpapers/zig.png &
+feh --bg-scale $HOME/Wallpapers/zig.jpg &
 /opt/urserver/urserver-start --no-manager

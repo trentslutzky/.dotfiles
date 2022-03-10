@@ -27,7 +27,7 @@ alert = #bd2c40
 accent = #227722
 
 [bar/main]
-monitor = ${env:MONITOR:HDMI-0}
+monitor = ${env:MONITOR:DisplayPort-0}
 width = 3840
 bottom = false
 height = 40
