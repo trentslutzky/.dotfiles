@@ -1,0 +1,151 @@
+* {
+  all: unset;
+}
+
+.sidebar_window {
+  background: #151515;
+  font-family: "Jetbrains Mono Nerd Font";
+  font-size: 16px;
+}
+
+.sidebar_window > box {
+  margin: 0.5em;
+  margin-right: 0;
+}
+
+.time {
+  background: #222222;
+  border-right: 0.2em solid #61afef;
+  color: #abb2bf;
+  padding: 0.33em;
+  margin-bottom: 0.5em;
+}
+
+.date {
+  background: #222222;
+  border-right: 0.2em solid #e5c07b;
+  color: #abb2bf;
+  padding: 0.33em;
+  margin-bottom: 0.5em;
+}
+
+.workspaces button {
+  padding: 0.25em;
+  padding-right: 0.5em;
+  margin-bottom: 0.125em;
+}
+
+.workspaces button:hover {
+  background: #333333;
+}
+
+.workspace_populated {
+  background: #222222;
+  border-right: 0.2em solid #98c379;
+  color: #abb2bf;
+}
+
+.workspace_empty {
+  background: #222222;
+  border-right: 0.2em solid #333333;
+  color: #333333;
+}
+ 
+
+.workspace_populated_focus {
+  background: #333333;
+  border-right: 0.2em solid #98c379;
+  color: #abb2bf;
+}
+
+.workspace_empty_focus {
+  background: #333333;
+  border-right: 0.2em solid #abb2bf;
+  color: #abb2bf;
+}
+
+.volume {
+  background: #222222;
+  border-right: 0.2em solid #98c379;
+  padding: 0.33em;
+  color: #abb2bf;
+  margin-bottom: 0.5em;
+}
+
+.volume_muted {
+  background: #222222;
+  border-right: 0.2em solid #e06c75;
+  padding: 0.33em;
+  color: #e06c75;
+  margin-bottom: 0.5em;
+}
+
+scale trough {
+  all: unset;
+  background-color: #151515;
+  border-radius: 0.75em;
+  min-height: 10em;
+  min-width: 1em;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.volume_bar trough highlight {
+  background: #98c379;
+  border-radius: 0.75em;
+}
+
+.volume_bar_muted trough highlight {
+  background: #333333;
+  border-radius: 0.75em;
+}
+
+.icon {
+  font-size: 1.1em;
+}
+
+.power_menu {
+  background: #222222;
+  border-right: 0.2em solid #e06c75;
+  color: #abb2bf;
+  padding: 0.33em;
+}
+
+.power_menu_handle {
+}
+
+
+.power_menu_buttons {
+  margin-bottom: 0.75em;
+}
+
+.power_menu_buttons > button {
+  margin-bottom: 0.4em;
+  padding: 0.33em;
+  padding-left:0.2em;
+  border-radius: 0.33em;
+  background: #333333;
+  font-size:1.3em;
+}
+
+.power_menu_buttons > button:hover {
+  background: #333333;
+}
+
+.power_menu_button_shutdown {
+  color: #e06c75;
+}
+
+.power_menu_button_sleep {
+  color: #c678dd;
+}
+.power_menu_button_restart {
+  color: #e5c07b;
+}
+
+.power_menu_button_logout {
+  color: #61afef;
+}
+
+.album_art {
+  margin-top:0.5em;
+}

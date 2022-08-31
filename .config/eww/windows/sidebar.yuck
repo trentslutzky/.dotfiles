@@ -1,0 +1,167 @@
+(defwindow sidebar
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry 
+    :x "0"
+    :y "0"
+    :width "60px"
+    :height "100%"
+    :anchor "right center"
+   )
+  :stacking "fg"
+  :exclusive "true"
+  (box 
+    :class "sidebar_window"
+    :orientation "vertical"
+    (box 
+      :orientation "vertical"
+      :valign "start"
+      :space-evenly false
+      (clock)
+      (workspaces)
+      (spotify_art)
+    )
+    (box 
+      :orientation "vertical"
+      :valign "end"
+      :space-evenly false
+      (volume)
+      (date)
+      (power_menu)
+    )
+  )
+
+)
+
+(defwidget clock []
+	(box	:orientation "v" 
+    :class "time" 
+    :valign "start"
+    :space-evenly false
+    (label :text hours_string)
+    (label :text mins_string)
+  )
+)
+
+(defwidget date []
+	(box	:orientation "v" 
+			:class "date" 
+			:valign "start"
+      :space-evenly false
+    (label :text weekday)
+    (label :text month)
+    (label :text day)
+  )
+)
+
+(defwidget icon [text]
+  (label
+    :class "icon"
+    :text text
+  )
+)
+
+
+(defpoll time_string	:interval "1s"	"date '+%I:%M'")
+(defpoll hours_string	:interval "1s"	"date '+%I'")
+(defpoll mins_string	:interval "1s"	"date '+%M'")
+(defpoll pm_string	:interval "1s"	"date '+%p'")
+(defpoll weekday	:interval "1s"	"date '+%a'")
+(defpoll month	:interval "1s"	"date '+%b'")
+(defpoll day	:interval "1s"	"date '+%d'")
+
+(defwidget workspaces []
+  (eventbox
+    :onscroll "$HOME/.config/sway/traverse_workspace.sh {}"
+    (literal :content workspaces)
+  )
+)
+(deflisten workspaces "scripts/workspace_watch.bash")
+
+(defwidget volume []
+  (eventbox
+    :onscroll "scripts/volume.bash {}"
+    :onhover "eww update show_volume_bar=true"
+    :onhoverlost "eww update show_volume_bar=false"
+    (box	:orientation "v" 
+      :class vol_class
+      :space-evenly "false"
+      (revealer
+        :transition "slideup"
+        :reveal show_volume_bar
+        (scale
+          :class vol_bar_class
+          :orientation "v"
+          :value volume
+          :min 0
+          :max 101
+          :flipped true
+          :onchange "pamixer --set-volume {}"
+        )
+      )
+      (button
+        :onclick "pamixer --toggle-mute"
+        (label :text muted)
+      )
+      (label :text volume)
+    )
+  )
+)
+(defvar show_volume_bar false)
+(defpoll volume :interval "100ms" "scripts/volume.bash volume")
+(defpoll muted :interval "100ms" "scripts/volume.bash muted")
+(defpoll vol_class :interval "100ms" "scripts/volume.bash classname")
+(defpoll vol_bar_class :interval "100ms" "scripts/volume.bash bar_classname")
+
+(defwidget power_menu []
+  (eventbox
+    :onhoverlost "eww update power_menu_hover=false"
+    (box	:orientation "v" 
+      :space-evenly "false"
+      :vexpand "false"
+      :class "power_menu"
+      (revealer
+        :transition "slideup"
+        :reveal power_menu_hover
+        (box	:orientation "v" 
+          :space-evenly "false"
+          :class "power_menu_buttons"
+          (button
+            :class "power_menu_button_logout"
+            ""
+          )
+          (button
+            :class "power_menu_button_sleep"
+            :onclick "systemctl suspend"
+            ""
+          )
+          (button
+            :class "power_menu_button_restart"
+            "ﰇ"
+          )
+          (button
+            :class "power_menu_button_shutdown"
+            "襤"
+          )
+        )
+      )
+      (button
+        :class "power_menu_handle"
+        :onclick "eww update power_menu_hover=true"
+        ""
+      )
+    )
+  )
+)
+(defvar power_menu_hover false)
+
+(defwidget spotify_art []
+  (image
+    :tooltip album_art_path
+    :class "album_art"
+    :path album_art_path
+    :width 50
+    :height 50
+  )
+)
+(defpoll album_art_path :interval "1000ms" "scripts/spotify.bash")

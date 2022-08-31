@@ -1,0 +1,27 @@
+(defwindow spotify
+  :monitor 0
+  :windowtype "dialog"
+  :geometry (geometry 
+    :x "-40"
+    :y "100"
+    :width "0"
+    :height "0"
+    :anchor "right top"
+   )
+  :stacking "fg"
+  :exclusive "false"
+  (spotify_art)
+)
+
+(defwidget spotify_art []
+  (button
+    :onclick "playerctl play-pause"
+    (image
+      :class "album_art"
+      :path album_art_path
+      :width 50
+      :height 50
+    )
+  )
+)
+(defpoll album_art_path :interval "1000ms" "scripts/spotify.bash")

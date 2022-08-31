@@ -1,0 +1,2 @@
+(include "windows/spotify.yuck")
+(include "windows/sidebar.yuck")
