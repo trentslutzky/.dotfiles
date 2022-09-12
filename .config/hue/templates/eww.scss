@@ -1,0 +1,152 @@
+#[target] /home/tls/.config/eww/eww.scss
+* {
+  all: unset;
+}
+
+.sidebar_window {
+  background: {{background}};
+  font-family: "Jetbrains Mono Nerd Font";
+  font-size: 16px;
+}
+
+.sidebar_window > box {
+  margin: 0.5em;
+  margin-right: 0;
+}
+
+.time {
+  background: {{background2}};
+  border-right: 0.2em solid {{color4}};
+  color: {{foreground}};
+  padding: 0.33em;
+  margin-bottom: 0.5em;
+}
+
+.date {
+  background: {{background2}};
+  border-right: 0.2em solid {{color3}};
+  color: {{foreground}};
+  padding: 0.33em;
+  margin-bottom: 0.5em;
+}
+
+.workspaces button {
+  padding: 0.25em;
+  padding-right: 0.5em;
+  margin-bottom: 0.125em;
+}
+
+.workspaces button:hover {
+  background: {{background3}};
+}
+
+.workspace_populated {
+  background: {{background2}};
+  border-right: 0.2em solid {{color2}};
+  color: {{foreground}};
+}
+
+.workspace_empty {
+  background: {{background2}};
+  border-right: 0.2em solid {{background3}};
+  color: {{background3}};
+}
+ 
+
+.workspace_populated_focus {
+  background: {{background3}};
+  border-right: 0.2em solid {{color2}};
+  color: {{foreground}};
+}
+
+.workspace_empty_focus {
+  background: {{background3}};
+  border-right: 0.2em solid {{foreground}};
+  color: {{foreground}};
+}
+
+.volume {
+  background: {{background2}};
+  border-right: 0.2em solid {{color2}};
+  padding: 0.33em;
+  color: {{foreground}};
+  margin-bottom: 0.5em;
+}
+
+.volume_muted {
+  background: {{background2}};
+  border-right: 0.2em solid {{color1}};
+  padding: 0.33em;
+  color: {{color1}};
+  margin-bottom: 0.5em;
+}
+
+scale trough {
+  all: unset;
+  background-color: {{background}};
+  border-radius: 0.75em;
+  min-height: 10em;
+  min-width: 1em;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.volume_bar trough highlight {
+  background: {{color2}};
+  border-radius: 0.75em;
+}
+
+.volume_bar_muted trough highlight {
+  background: {{background3}};
+  border-radius: 0.75em;
+}
+
+.icon {
+  font-size: 1.1em;
+}
+
+.power_menu {
+  background: {{background2}};
+  border-right: 0.2em solid {{color1}};
+  color: {{foreground}};
+  padding: 0.33em;
+}
+
+.power_menu_handle {
+}
+
+
+.power_menu_buttons {
+  margin-bottom: 0.75em;
+}
+
+.power_menu_buttons > button {
+  margin-bottom: 0.4em;
+  padding: 0.33em;
+  padding-left:0.2em;
+  border-radius: 0.33em;
+  background: {{background3}};
+  font-size:1.3em;
+}
+
+.power_menu_buttons > button:hover {
+  background: {{background3}};
+}
+
+.power_menu_button_shutdown {
+  color: {{color1}};
+}
+
+.power_menu_button_sleep {
+  color: {{color5}};
+}
+.power_menu_button_restart {
+  color: {{color3}};
+}
+
+.power_menu_button_logout {
+  color: {{color4}};
+}
+
+.album_art {
+  margin-top:0.5em;
+}

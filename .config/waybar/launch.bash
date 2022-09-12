@@ -1,7 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+waybar &
 
 while true; do
-  waybar &
-  inotifywait -e create,modify $HOME/.config/waybar/ $HOME/.cache/wal/
-  killall waybar
+  inotifywait -e create,modify $HOME/.config/waybar/style.css
+  kill -s SIGUSR2 $(pidof waybar)
 done

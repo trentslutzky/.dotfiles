@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 while true; do
   ARTIST=$(playerctl metadata artist -s)
   TITLE=$(playerctl metadata title -s)

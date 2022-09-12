@@ -1,8 +1,20 @@
 # pywal colors
-include "$HOME/.cache/wal/colors-sway"
+include "$HOME/.config/sway/theme"
 
 ### launch before sway
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+# exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway XCURSOR_SIZE=64
+exec systemctl --user import-environment
+
+# auto reload scripts
+# sway
+exec "nix-shell -p inotify-tools --run $HOME/.config/sway/watch_config.bash "
+# waybar
+# exec "nix-shell -p inotify-tools --run $HOME/.config/waybar/launch.bash"
+# kitty
+exec "nix-shell -p inotify-tools --run $HOME/.config/kitty/watch_config.bash"
+# fish
+exec "nix-shell -p inotify-tools --run $HOME/.config/fish/watch_colors.bash"
+
 
 # audio
 exec pipewire-pulse
@@ -13,7 +25,11 @@ exec mako
 
 # waybar using custom launcher script
 # exec waybar
-exec "/bin/bash -c '$HOME/.config/waybar/launch.bash'"
+# exec "/usr/bin/env/ bash -c '$HOME/.config/waybar/launch.bash'"
+# exec waybar
+
+exec "eww daemon"
+exec "eww open sidebar"
 
 # stretchly - break/exercise reminders
 #exec stretchly
@@ -26,13 +42,13 @@ exec autotiling
 exec "gammastep -l 34.108:-83.175 -t 6500:3200"
 
 ### Monitors
-
-output HDMI-A-1 mode 1920x1080 position 0,0
-output DP-1 mode 3840x2160 position 1920,0 scale 1.25
+#output HDMI-A-1 mode 1920x1080 position 0,0
+output DP-1 mode 3840x2160 position 1920,0 scale 1.2
+#output DP-1 mode 1920x1080 position 1920,0
 
 # wallpapers (* sets the same on both)
 output * bg "#000000" solid_color
-output DP-1 bg /home/tls/Wallpapers/zig.jpg fill
+output DP-1 bg /home/tls/Wallpapers/squares_purple.jpg fill
 
 ### Variables
 
@@ -54,7 +70,7 @@ set $menu rofi -show run
 ### visual stuff
 
 # remove the title bar
-default_border pixel 2
+default_border pixel 3
 
 # GAPS
 gaps inner 15
@@ -62,12 +78,12 @@ gaps inner 15
 # borders
 client.focused #000000 $color4 #000000 $color4
 
-client.focused_inactive #000000 #222222 #000000 #222222
+client.focused_inactive #000000 $background2 #000000 $background2
 
-focus_follows_mouse no
+focus_follows_mouse yes
 
 smart_borders on
-smart_gaps on
+smart_gaps off
 
 ### Key bindings
   # media buttons
@@ -96,8 +112,8 @@ smart_gaps on
   floating_modifier $mod normal
 
   # screenshot
-  # bindsym Print exec grim -g "$(slurp -d -c "#51ac21ff" -b "#000000aa")" - | wl-copy && notify-send "screenshot captured"
-  bindsym Print exec grimshot --notify copy area
+  bindsym Print exec grim -g "$(slurp -d -c "#51ac21ff" -b "#000000cc")" - | wl-copy && notify-send "screenshot captured"
+  # bindsym Print exec grimshot --notify copy area
 
   # Reload the configuration file
   bindsym $mod+Shift+c reload

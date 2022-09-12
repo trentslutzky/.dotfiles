@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 
 CUR_DISPLAY=$(swaymsg -t get_tree | jq -r --unbuffered --compact-output '
@@ -21,14 +21,16 @@ elif [ $1 == "next" ]; then
     TO_WORKSPACE=$(expr $CUR_WORKSPACE + 1)
 fi
 
-if [ $TO_WORKSPACE -eq 9 ]; then
+if [ $1 == "down" ]; then
+    TO_WORKSPACE=$(expr $CUR_WORKSPACE + 1)
+elif [ $1 == "up" ]; then
+    TO_WORKSPACE=$(expr $CUR_WORKSPACE - 1)
+fi
+
+if [ $TO_WORKSPACE -eq 11 ]; then
     TO_WORKSPACE=1
-elif [ $TO_WORKSPACE -eq 10 ]; then
-    TO_WORKSPACE=13
-elif [ $TO_WORKSPACE -eq 14 ]; then
-    TO_WORKSPACE=11
 elif [ $TO_WORKSPACE -eq 0 ]; then
-    TO_WORKSPACE=8
+    TO_WORKSPACE=10
 fi
 
 swaymsg workspace number $TO_WORKSPACE

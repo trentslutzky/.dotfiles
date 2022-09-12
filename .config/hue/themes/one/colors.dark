@@ -1,0 +1,33 @@
+background #151515
+background1 #111111
+background2 #222222
+background3 #333333
+
+foreground #abb2bf
+foreground1 #888e99
+foreground2 #6c717a
+foreground3 #6c717a
+
+color0 #282c34
+color0_lighter #545862
+
+color1 #e06c75
+color1_lighter #e06c75
+
+color2 #98c379
+color2_lighter #98c379
+
+color3 #e5c07b
+color3_lighter #e5c07b
+
+color4 #61afef
+color4_lighter #61afef
+
+color5 #c678dd
+color5_lighter #c678dd
+
+color6 #56b6c2
+color6_lighter #56b6c2
+
+color7 #abb2bf
+color7_lighter #c8ccd4

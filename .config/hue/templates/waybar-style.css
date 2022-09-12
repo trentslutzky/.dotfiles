@@ -1,3 +1,4 @@
+#[target] /home/tls/.config/waybar/style.css
 
 * {
     border: none;
@@ -9,13 +10,13 @@
 }
 
 window#waybar {
-  background: #151515;
+  background: {{background}};
   opacity: 1;
-  color: #abb2bf;
+  color: {{foreground}};
 }
 
 #workspaces button {
-  color:#abb2bf;
+  color:{{foreground}};
   background: none;
   padding: 0.5em;
   box-shadow: inset 0 -3px transparent;
@@ -25,19 +26,19 @@ window#waybar {
 }
 
 #workspaces button.focused {
-  background: #61afef;
+  background: {{color4}};
   color:black;
 }
 
 #workspaces button.focused:hover {
-  background: #e5c07b;
+  background: {{color3}};
   color:white;
 }
 
 #workspaces button:hover {
   box-shadow:none;
   text-shadow:none;
-  background: #222222;
+  background: {{background2}};
   color:white;
 }
 #pulseaudio, #temperature, #clock, #custom-player, #custom-weather {
@@ -48,32 +49,32 @@ window#waybar {
 }
 
 #temperature {
-  color: #e06c75;
-  border-bottom: 2px solid #e06c75;
+  color: {{color1}};
+  border-bottom: 2px solid {{color1}};
 }
 
 #pulseaudio {
-  color: #98c379;
-  border-bottom: 2px solid #98c379;
+  color: {{color2}};
+  border-bottom: 2px solid {{color2}};
 }
 
 #clock.date {
-  color: #e5c07b;
-  border-bottom: 2px solid #e5c07b;
+  color: {{color3}};
+  border-bottom: 2px solid {{color3}};
 }
 
 #clock.time {
-  color: #61afef;
-  border-bottom: 2px solid #61afef;
+  color: {{color4}};
+  border-bottom: 2px solid {{color4}};
 }
 
 #custom-weather {
-  color: #61afef;
-  border-bottom: 2px solid #61afef;
+  color: {{color4}};
+  border-bottom: 2px solid {{color4}};
 }
 
 #custom-player {
-  border-bottom: 2px solid #61afef;
+  border-bottom: 2px solid {{color4}};
 }
 
 #tray{

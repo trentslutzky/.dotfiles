@@ -1,0 +1,24 @@
+#[target] /home/tls/.config/sway/theme
+
+set $foreground {{foreground}} 
+set $background {{background}} 
+set $background1 {{background1}} 
+set $background2 {{background2}} 
+set $background3 {{background3}} 
+
+set $color0     {{color0}} 
+set $color1     {{color1}} 
+set $color2     {{color2}} 
+set $color3     {{color3}} 
+set $color4     {{color4}} 
+set $color5     {{color5}} 
+set $color6     {{color6}} 
+set $color7     {{color7}} 
+set $color8     {{color0_lighter}} 
+set $color9     {{color1_lighter}} 
+set $color10    {{color2_lighter}} 
+set $color11    {{color3_lighter}} 
+set $color12    {{color4_lighter}} 
+set $color13    {{color5_lighter}} 
+set $color14    {{color6_lighter}} 
+set $color15    {{color7_lighter}} 
