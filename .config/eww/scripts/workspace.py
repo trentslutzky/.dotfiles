@@ -6,7 +6,7 @@ import json
 output = Popen(["swaymsg","-t","get_workspaces"],stdout=PIPE)
 response = output.communicate()
 
-data_string = response[0].decode("ascii")
+data_string = response[0]
 
 data = json.loads(data_string)
 
