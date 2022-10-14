@@ -23,6 +23,9 @@ exec pipewire-pulse
 # notifications
 exec mako
 
+# wob volume bar
+exec bash $HOME/.config/sway/wob_launcher.bash
+
 # waybar using custom launcher script
 # exec waybar
 # exec "/usr/bin/env/ bash -c '$HOME/.config/waybar/launch.bash'"
@@ -39,20 +42,18 @@ exec "eww open sidebar"
 exec autotiling
 
 # gammastep for color temp changing
-exec "gammastep -l 34.108:-83.175 -t 6500:3200"
+exec "gammastep -l 34.108:-83.175 -t 6500:3000"
 
 ### Monitors
-#output HDMI-A-1 mode 1920x1080 position 0,0
-output DP-1 mode 3840x2160 position 1920,0 scale 1.2
-#output DP-1 mode 1920x1080 position 1920,0
+output DP-1 mode 3840x2160 position 0,0 scale 1.2
 
-# wallpapers (* sets the same on both)
-output * bg "#000000" solid_color
-output DP-1 bg /home/tls/Wallpapers/squares_purple.jpg fill
+# wallpapers
+output * bg "#111111" solid_color
+#output DP-1 bg /home/tls/Wallpapers/grey.png fill 
 
 ### Variables
 
-# Logo key. Use Mod1 for Alt.
+# Set mod key
 set $mod Mod4
 
 # custom direction keys
@@ -73,14 +74,14 @@ set $menu rofi -show run
 default_border pixel 3
 
 # GAPS
-gaps inner 15
+gaps inner 5
 
 # borders
 client.focused #000000 $color4 #000000 $color4
 
 client.focused_inactive #000000 $background2 #000000 $background2
 
-focus_follows_mouse yes
+focus_follows_mouse no
 
 smart_borders on
 smart_gaps off
@@ -89,7 +90,7 @@ smart_gaps off
   # media buttons
 
   # play/pause back fwd
-  bindsym XF86AudioPlay exec playerctl play-pause
+  bindsym XF86AudioPlay exec "$HOME/.config/sway/scripts/player-open-toggle.bash"
   bindsym XF86AudioNext exec playerctl next
   bindsym XF86AudioPrev exec playerctl previous
 
@@ -134,6 +135,8 @@ smart_gaps off
   bindsym $mod+Down focus down
   bindsym $mod+Up focus up
   bindsym $mod+Right focus right
+
+  bindsym F8 exec "/home/tls/Scripts/toggle_lights.py"
 
 ### Workspaces:
   # Bind to monitors

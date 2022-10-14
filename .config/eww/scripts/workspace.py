@@ -54,7 +54,8 @@ for workspace in workspaces:
     classname = classname + ("_focus" if w["focused"] else "")
     classname = classname + '"'
     workspace_widgets = workspace_widgets + f" (button :class {classname} :cursor \"pointer\""
-    workspace_widgets = workspace_widgets + f" :onclick \"sway workspace {workspace}\" \"{w['name']}\") "
+    workspace_widgets = workspace_widgets + f" :onclick \"sway workspace {workspace}\" "
+    workspace_widgets = workspace_widgets + f" :onmiddleclick \"swaymsg move container to workspace number {workspace}\" \"{w['name']}\") "
 
 
 workspace_widgets = workspace_widgets + ' ) '

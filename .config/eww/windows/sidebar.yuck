@@ -18,6 +18,7 @@
       :valign "start"
       :space-evenly false
       (clock)
+      (date)
       (workspaces)
       (spotify_art)
     )
@@ -26,7 +27,6 @@
       :valign "end"
       :space-evenly false
       (volume)
-      (date)
       (power_menu)
     )
   )
