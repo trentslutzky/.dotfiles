@@ -1,8 +1,10 @@
 font=Jetbrains Mono Nerd Font
 width=400
-padding=10
-background-color=#000000da
-border-color=#61afef
+padding=15
+background-color=#151515
+border-size=3
+border-color=#98c379
+icons=1
 icon-location=right
 default-timeout=10000
 max-visible=16

@@ -3,9 +3,9 @@
 }
 
 .sidebar_window {
-  background: #151515;
+  background: #050805;
   font-family: "Jetbrains Mono Nerd Font";
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .sidebar_window > box {
@@ -14,17 +14,17 @@
 }
 
 .time {
-  background: #222222;
+  background: #121212;
   border-right: 0.2em solid #61afef;
-  color: #abb2bf;
+  color: #ffffff;
   padding: 0.33em;
   margin-bottom: 0.5em;
 }
 
 .date {
-  background: #222222;
+  background: #121212;
   border-right: 0.2em solid #e5c07b;
-  color: #abb2bf;
+  color: #ffffff;
   padding: 0.33em;
   margin-bottom: 0.5em;
 }
@@ -36,44 +36,44 @@
 }
 
 .workspaces button:hover {
-  background: #333333;
+  background: #252525;
 }
 
 .workspace_populated {
-  background: #222222;
+  background: #121212;
   border-right: 0.2em solid #98c379;
-  color: #abb2bf;
+  color: #ffffff;
 }
 
 .workspace_empty {
-  background: #222222;
-  border-right: 0.2em solid #333333;
-  color: #333333;
+  background: #121212;
+  border-right: 0.2em solid #252525;
+  color: #252525;
 }
  
 
 .workspace_populated_focus {
-  background: #333333;
+  background: #252525;
   border-right: 0.2em solid #98c379;
-  color: #abb2bf;
+  color: #ffffff;
 }
 
 .workspace_empty_focus {
-  background: #333333;
-  border-right: 0.2em solid #abb2bf;
-  color: #abb2bf;
+  background: #252525;
+  border-right: 0.2em solid #ffffff;
+  color: #ffffff;
 }
 
 .volume {
-  background: #222222;
+  background: #121212;
   border-right: 0.2em solid #98c379;
   padding: 0.33em;
-  color: #abb2bf;
+  color: #ffffff;
   margin-bottom: 0.5em;
 }
 
 .volume_muted {
-  background: #222222;
+  background: #121212;
   border-right: 0.2em solid #e06c75;
   padding: 0.33em;
   color: #e06c75;
@@ -82,7 +82,7 @@
 
 scale trough {
   all: unset;
-  background-color: #151515;
+  background-color: #050805;
   border-radius: 0.75em;
   min-height: 10em;
   min-width: 1em;
@@ -95,7 +95,7 @@ scale trough {
 }
 
 .volume_bar_muted trough highlight {
-  background: #333333;
+  background: #252525;
   border-radius: 0.75em;
 }
 
@@ -104,9 +104,9 @@ scale trough {
 }
 
 .power_menu {
-  background: #222222;
+  background: #121212;
   border-right: 0.2em solid #e06c75;
-  color: #abb2bf;
+  color: #ffffff;
   padding: 0.33em;
 }
 
@@ -123,12 +123,12 @@ scale trough {
   padding: 0.33em;
   padding-left:0.2em;
   border-radius: 0.33em;
-  background: #333333;
+  background: #252525;
   font-size:1.3em;
 }
 
 .power_menu_buttons > button:hover {
-  background: #333333;
+  background: #252525;
 }
 
 .power_menu_button_shutdown {

@@ -9,13 +9,13 @@
 }
 
 window#waybar {
-  background: #151515;
+  background: #050805;
   opacity: 1;
-  color: #abb2bf;
+  color: #ffffff;
 }
 
 #workspaces button {
-  color:#abb2bf;
+  color:#ffffff;
   background: none;
   padding: 0.5em;
   box-shadow: inset 0 -3px transparent;
@@ -37,7 +37,7 @@ window#waybar {
 #workspaces button:hover {
   box-shadow:none;
   text-shadow:none;
-  background: #222222;
+  background: #121212;
   color:white;
 }
 #pulseaudio, #temperature, #clock, #custom-player, #custom-weather {

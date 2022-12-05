@@ -9,5 +9,6 @@ set -U fish_color_command {{color4}}
 set -U fish_color_comment {{color3}}
 set -U fish_color_error {{color1}}
 set -U fish_color_escape {{color5}}
-set -U fish_color_normal {{foreground}}
-set -U fish_color_param {{foreground1}}
+set -U fish_color_normal {{foreground1}}
+set -U fish_color_param {{foreground}}
+set -U fish_color_cwd_root {{color1}}

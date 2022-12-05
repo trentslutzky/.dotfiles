@@ -1,4 +1,4 @@
-#[target] /home/tls/.config/nvim/lua/colors.lua
+#[target] /Users/trent/.config/nvim/lua/colors.lua
 
 local set = vim.opt
 local cmd = vim.cmd
@@ -43,10 +43,32 @@ local cyan = "{{color6}}"
 
 local highlghts = {
 
-  Normal = {
-    fg =foreground,
-    bg = bg_0
-  },
+  Normal = {fg = foreground, bg = bg_0 },
+  String = { fg = green },
+  Character = { fg = yellow },
+  Function = { fg = blue },
+  Special = { fg = blue },
+  Number = { fg = yellow },
+  Constant = { fg = cyan },
+  Float = { fg = yellow },
+  Boolean = { fg = yellow },
+  PreProc = { fg = yellow },
+  PreCondit = { fg = yellow },
+  Type = { fg = yellow },
+  Typedef = { fg = yellow },
+  Structure = { fg = yellow },
+  StorageClass = { fg = yellow },
+  Include = { fg = magenta },
+  Statement = { fg = magenta },
+  Todo = { fg = magenta },
+  Conditional = { fg = magenta },
+  Exception = { fg = magenta },
+  Define = { fg = magenta },
+  Label = { fg = magenta },
+  Macro = { fg = magenta },
+  Repeat = { fg = magenta },
+  Identifier = { fg = red },
+  Keyword = { fg = red },
 
   NormalFloat = {
     bg = bg_1,
@@ -60,12 +82,12 @@ local highlghts = {
   },
 
   BufferLineBackground = {
-    fg = bg_3,
+    fg = foreground,
     bg = bg_1,
   },
 
   BufferLineCloseButton = {
-    fg = bg_3,
+    fg = foreground,
     bg = bg_1,
   },
 
@@ -105,10 +127,18 @@ local highlghts = {
     bg = bg_2,
   },
 
+  Visual = {
+    bg = bg_3,
+  },
+
   -- telescope
 
   TelescopeNormal = {
     bg = bg_1,
+  },
+
+  TelescopeSelection = {
+    bg = bg_2,
   },
 
   TelescopeBorder = {
@@ -118,6 +148,12 @@ local highlghts = {
 
   TelescopePreviewNormal = {
     bg = bg_2,
+  },
+
+  TelescopePreviewLine = {
+    bg = bg_3,
+    fg = blue,
+    gui = "bold",
   },
 
   TelescopePreviewTitle = {
@@ -194,7 +230,7 @@ local highlghts = {
 
   Cursorline = {
     gui = "bold",
-    bg = bg_2,
+    bg = bg_1,
   },
 
   CursorlineNr = {
@@ -286,6 +322,36 @@ local highlghts = {
   Operator = {
     fg = yellow,
   },
+
+  -- scrollbar
+  
+  ScrollbarHandle = {
+    bg = bg_1
+  },
+
+  ScrollbarErrorHandle = {
+    bg = bg_1
+  },
+
+  ScrollbarSearchHandle = {
+    bg = bg_1
+  },
+
+  ScrollbarInfoHandle = {
+    bg = bg_1
+  },
+
+  ScrollbarHintHandle = {
+    bg = bg_1
+  },
+
+  ScrollbarWarnHandle = {
+    bg = bg_1
+  },
+
+  ScrollbarMiscHandle = {
+    bg = bg_1
+  }
 
 }
 

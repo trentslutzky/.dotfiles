@@ -42,14 +42,14 @@ exec "eww open sidebar"
 exec autotiling
 
 # gammastep for color temp changing
-exec "gammastep -l 34.108:-83.175 -t 6500:3000"
+exec "gammastep -l 34.108:-83.175 -t 6500:2500"
 
 ### Monitors
-output DP-1 mode 3840x2160 position 0,0 scale 1.2
+output DP-1 mode 3842x2162 position 0,0 scale 1
 
 # wallpapers
-output * bg "#111111" solid_color
-#output DP-1 bg /home/tls/Wallpapers/grey.png fill 
+output * bg "#050805" solid_color
+#output DP-1 bg /home/tls/Wallpapers/fjord.jpg fill 
 
 ### Variables
 
@@ -71,13 +71,13 @@ set $menu rofi -show run
 ### visual stuff
 
 # remove the title bar
-default_border pixel 3
+default_border pixel 1
 
 # GAPS
-gaps inner 5
+gaps inner 0
 
 # borders
-client.focused #000000 $color4 #000000 $color4
+client.focused #000000 $foreground #000000 $foreground
 
 client.focused_inactive #000000 $background2 #000000 $background2
 

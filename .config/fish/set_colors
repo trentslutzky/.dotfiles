@@ -1,11 +1,12 @@
 #!/usr/bin/env fish
 
 set -U fish_color_cwd 98c379
-set -U fish_color_autosuggestion 333333
+set -U fish_color_autosuggestion 252525
 set -U fish_color_cancel e06c75
 set -U fish_color_command 61afef
 set -U fish_color_comment e5c07b
 set -U fish_color_error e06c75
 set -U fish_color_escape c678dd
-set -U fish_color_normal abb2bf
-set -U fish_color_param 888e99
+set -U fish_color_normal 888e99
+set -U fish_color_param ffffff
+set -U fish_color_cwd_root e06c75

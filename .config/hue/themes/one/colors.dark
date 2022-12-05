@@ -1,9 +1,13 @@
-background #151515
+background #050805
 background1 #111111
+background1 #090909
 background2 #222222
+background2 #121212
 background3 #333333
+background3 #252525
 
 foreground #abb2bf
+foreground #ffffff
 foreground1 #888e99
 foreground2 #6c717a
 foreground3 #6c717a
@@ -28,6 +32,8 @@ color5_lighter #c678dd
 
 color6 #56b6c2
 color6_lighter #56b6c2
+color6 #61afef
+color6_lighter #61afef
 
 color7 #abb2bf
 color7_lighter #c8ccd4
